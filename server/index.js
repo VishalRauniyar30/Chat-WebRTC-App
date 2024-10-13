@@ -1,19 +1,15 @@
-import express from 'express';
-import { createServer } from 'http';
-import cors from 'cors';
-import { Server } from 'socket.io';
+const app = require("express")();
+const server = require("http").createServer(app);
+const cors = require("cors");
 
-const app = express();
-const server = createServer(app);
-
-const io = new Server(server, {
-    cors: {
-        origin: "*",
-        methods: ['GET', 'POST']
-    }
+const io = require("socket.io")(server, {
+	cors: {
+		origin: "*",
+		methods: [ "GET", "POST" ]
+	}
 });
 
-app.use(cors({ origin : '*' }));
+app.use(cors());
 
 const Port = process.env.PORT || 5000;
 
