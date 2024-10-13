@@ -4,8 +4,8 @@ import Peer from 'simple-peer/simplepeer.min.js'
 
 const SocketContext = createContext()
 
-const socket = io('http://localhost:5000')
-// const socket = io('https://web-rtc-chat-app-server-bcr7f4lub-vishalrauniyar30s-projects.vercel.app/');
+// const socket = io('http://localhost:5000')
+const socket = io('https://chat-web-rtc-app-backend.vercel.app/');
 
 const ContextProvider = ({ children }) => {
 
